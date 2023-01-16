@@ -1,5 +1,6 @@
 const path = require('path');
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const toPath = (filePath) => path.join(process.cwd(), filePath);
 
 module.exports = {
   webpackFinal: async (config) => {
@@ -16,7 +17,10 @@ module.exports = {
 
     // allow absolute import
     updatedConfig.resolve.modules = [...(updatedConfig.resolve.modules || []), path.resolve(__dirname, '../../')];
-
+    updatedConfig.resolve.alias = {
+      ...updatedConfig.resolve.alias,
+      '@emotion/core': toPath('node_modules/@emotion/react'),
+    };
     return {
       ...updatedConfig,
       // we are using NodePolyfillPlugin to support node polyfill in webpack 5

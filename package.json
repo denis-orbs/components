@@ -111,7 +111,9 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.1",
     "styled-system": "^5.1.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.3.1",
+    "@orbs-network/twap-ui": "0.4.3-alpha.1",
+    "@orbs-network/twap-ui-pangolin": "0.4.3-alpha.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
